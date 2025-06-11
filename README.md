@@ -27,5 +27,5 @@ Send an SMS notification:
 ```bash
 curl -X POST http://localhost:8080/notify/sms \
      -H 'Content-Type: application/json' \
-     -d '{"to":"+15555550123","message":"Hi"}'
+     -d '{"to":"+15555550123","message":"Hi","subscription":"kaleyra"}'
 ```
