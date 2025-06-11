@@ -1,7 +1,8 @@
-package com.example.notificationservice.provider;
+package com.example.notificationservice.adapters.out.sms;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.example.notificationservice.application.port.out.NotificationProvider;
 
 public class KaleyraSmsProvider implements NotificationProvider {
     private static final Logger logger = LoggerFactory.getLogger(KaleyraSmsProvider.class);

@@ -1,16 +1,17 @@
-package com.example.notificationservice.service;
+package com.example.notificationservice.application.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.example.notificationservice.provider.NotificationProvider;
-import com.example.notificationservice.provider.NotificationProviderFactory;
-import com.example.notificationservice.provider.NotificationType;
-import com.example.notificationservice.provider.SmsSubscription;
+import com.example.notificationservice.application.port.out.NotificationProvider;
+import com.example.notificationservice.application.port.in.NotificationUseCase;
+import com.example.notificationservice.application.port.out.NotificationProviderFactory;
+import com.example.notificationservice.domain.NotificationType;
+import com.example.notificationservice.domain.SmsSubscription;
 
 @Service
-public class NotificationService {
+public class NotificationService implements NotificationUseCase {
     private static final Logger logger = LoggerFactory.getLogger(NotificationService.class);
 
     private final NotificationProviderFactory providerFactory;
