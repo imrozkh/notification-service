@@ -1,5 +1,6 @@
 package com.example.notificationservice.controller;
 
+import com.example.notificationservice.provider.SmsSubscription;
 import com.example.notificationservice.service.NotificationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,9 @@ public class NotificationController {
     public ResponseEntity<String> sendSms(@RequestBody Map<String, String> payload) {
         String to = payload.get("to");
         String message = payload.get("message");
-        notificationService.sendSms(to, message);
+        String subscriptionValue = payload.get("subscription");
+        SmsSubscription subscription = SmsSubscription.valueOf(subscriptionValue.toUpperCase());
+        notificationService.sendSms(subscription, to, message);
         return ResponseEntity.ok("SMS sent");
     }
 }
